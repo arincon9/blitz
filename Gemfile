@@ -12,6 +12,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'materialize-sass'
 gem 'jquery-turbolinks'
+gem "haml-rails", "~> 0.9"
 
 group :development, :test do
   gem 'byebug', platform: :mri

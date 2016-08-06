@@ -1,0 +1,32 @@
+%section.cd-product
+  .cd-product-intro
+    %h1 Message Blitz
+    %p Send your friends a blitz of funny image messages.
+    / Modal Trigger Button
+    %a.waves-effect.waves-light.btn-large.light-blue.modal-trigger{"data-turbolinks" => "false", :href => "#modal1"} Blitz a Friend
+    %a#cd-start.waves-effect.waves-light.btn-large.light-blue{"data-turbolinks" => "false", :href => "#cd-product-tour"} How it works
+  / cd-product-intro
+  #cd-product-tour.cd-product-mockup
+    = image_tag "cd-app-image.png", alt: "Preview image"
+    %ul.cd-points-container
+      %li.cd-single-point
+        %a.cd-img-replace{"data-turbolinks" => "false", :href => "#0"} More info
+        .cd-more-info.cd-right
+          %p
+            Add your friend's name and number. Your name is optional, send anonymously if you'd like. Choose a picture bundle when you buy the blitz, Click send and watch your friends get blitzed with a bunch of funny images and messages. They won't know what hit them. Continue to laugh.
+          %a.cd-close-info.cd-img-replace{"data-turbolinks" => "false", :href => "#0"} Close
+      / .cd-single-point
+  / .cd-product-mockup
+  .cd-3d-right-side
+  .cd-3d-bottom-side
+  %a.cd-close-product-tour.cd-img-replace{"data-turbolinks" => "false", :href => "#0"}
+/ .cd-product
+/ Modal Structure
+#modal1.modal.modal-fixed-footer
+  .modal-content
+    %h4 Modal Header
+    %p A bunch of text
+  .modal-footer
+    %button.modal-action.modal-close.btn.waves-effect.waves-light{"data-turbolinks" => "false", :name => "action", :type => "submit"}
+      Submit
+      %i.material-icons.right send
