@@ -1,0 +1,6 @@
+= simple_form do |f|
+  = f.association :showtime, label_method: :display_name, collection: Showtime.for_movie(params[:movie_id]).upcoming
+  = f.input :name
+  = f.input :phone_number
+  = f.input :bundle
+  = f.button :submit

@@ -24,8 +24,7 @@
 / Modal Structure
 #modal1.modal.modal-fixed-footer
   .modal-content
-    %h4 Modal Header
-    %p A bunch of text
+    = render "messages/form"
   .modal-footer
     %button.modal-action.modal-close.btn.waves-effect.waves-light{"data-turbolinks" => "false", :name => "action", :type => "submit"}
       Submit
