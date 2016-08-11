@@ -110,6 +110,7 @@ GEM
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     pg (0.18.4)
+    phonelib (0.6.3)
     pkg-config (1.1.7)
     puma (3.6.0)
     rack (2.0.1)
@@ -223,6 +224,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   materialize-sass
   pg
+  phonelib
   puma (~> 3.0)
   rails (~> 5.0.0)
   rspec-rails (~> 3.1)
