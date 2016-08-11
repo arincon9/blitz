@@ -25,8 +25,8 @@ html * {
 
 body {
   font-size: 1.6rem;
-  color: #fff;
-  background-color: #FF6B42;
+  color: #FF6B42;
+  background-color: #fff;
 }
 
 @media only screen and (min-width: 1170px) {
@@ -68,7 +68,7 @@ Modules - reusable parts of our design
   font-weight: bold;
   font-size: 1.2rem;
   font-family: "PT Sans", sans-serif;
-  color: #ffffff;
+  color: #FF6B42;
   background-color: #685f99;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
@@ -114,16 +114,16 @@ Main components
 }
 .cd-product-intro h1 {
   margin-bottom: 10px;
-  font-size: 2.5rem;
+  font-size: 7rem;
   font-weight: 700;
   font-family: "PT Sans", sans-serif;
-  color: #ffffff;
+  color: #FF6B42;
 }
 .cd-product-intro p {
   max-width: 560px;
   margin: 0 auto;
   padding: 0 0 20px;
-  font-size: 1.4rem;
+  font-size: 2rem;
   line-height: 1.8;
 }
 .cd-product-intro::before {
@@ -160,10 +160,10 @@ Main components
     transform: translateX(-50%);
   }
   .cd-product-intro h1 {
-    font-size: 4rem;
+    font-size: 7rem;
   }
   .cd-product-intro p {
-    font-size: 1.6rem;
+    font-size: 2rem;
     padding: 10px 0 44px;
     margin: 0;
   }
@@ -363,7 +363,7 @@ Main components
     position: absolute;
     left: 50%;
     top: 50%;
-    background-color: #ffffff;
+    background-color: #FF6B42;
   }
   .cd-close-product-tour::after {
     -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
@@ -800,3 +800,40 @@ Main components
     display: none;
   }
 }
+
+label {
+	font-size: 1.5rem;
+}
+
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea{
+	font-size: 1.3rem;
+}
+
+/* label color */
+ .input-field label {
+	 color: #000;
+ }
+ /* label focus color */
+ input[type]:focus:not([readonly]) {
+border-bottom: 1px solid #FF6B42;
+box-shadow: 0 1px 0 0  #FF6B42;
+}
+ /* label underline focus color */
+ .input-field input[type=text]:focus {
+	 border-bottom: 1px solid #FF6B42;
+	 box-shadow: 0 1px 0 0 #FF6B42;
+ }
+ /* valid color */
+ .input-field input[type=text].valid {
+	 border-bottom: 1px solid #000;
+	 box-shadow: 0 1px 0 0 #000;
+ }
+ /* invalid color */
+ .input-field input[type=text].invalid {
+	 border-bottom: 1px solid #000;
+	 box-shadow: 0 1px 0 0 #000;
+ }
+ /* icon prefix focus color */
+ .input-field .prefix.active {
+	 color: #000;
+ }

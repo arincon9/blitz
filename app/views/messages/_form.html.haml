@@ -1,6 +1,5 @@
-= simple_form do |f|
-  = f.association :showtime, label_method: :display_name, collection: Showtime.for_movie(params[:movie_id]).upcoming
-  = f.input :name
-  = f.input :phone_number
-  = f.input :bundle
-  = f.button :submit
+= simple_form_for Message.new, url: { action: "create", controller: "messages" } do |f|
+ = f.input :name, as: :string
+ = f.input :phone_number, as: :integer
+ = f.input :images, as: :string
+ = f.button :submit, 'Send Blitz!', class: 'light-blue'
