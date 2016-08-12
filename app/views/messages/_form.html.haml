@@ -2,4 +2,12 @@
  = f.input :name, as: :string, label: "Your name", placeholder: "Rick Sanchez"
  = f.input :phone_number, as: :integer, label: "Recipient phone number", placeholder: "3101234567"
  = f.input :images, as: :string, placeholder: "Image to search & send.... i.e. Penguins, Shirtless Dudes", label: "Image term"
+ .input-field
+  = f.input :bundle, collection: [ "10 Images: $0.99 ", "20 images: $2.23", "50 Images: $4.75" ], label: "Select blitz size"
+ %br
+ %br
+ %br
+ %br
  = f.button :submit, 'Send Blitz!', class: 'light-blue'
+ %br
+ %br

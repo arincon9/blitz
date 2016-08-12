@@ -42,3 +42,7 @@ jQuery(document).ready(function($){
 		$('.cd-points-container').removeClass('points-enlarged points-pulsing');
 	});
 });
+
+$(document).ready(function() {
+	$('select').material_select();
+});
