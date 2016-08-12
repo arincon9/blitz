@@ -847,4 +847,9 @@ box-shadow: 0 1px 0 0  #FF6B42;
 	color: #9e9e9e;
 	font-size: 1.5rem;
 	top: 0rem;
+	position: relative;
+}
+
+.select-wrapper input.select-dropdown {
+	font-size: 1.5rem;
 }
