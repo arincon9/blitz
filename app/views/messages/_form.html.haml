@@ -1,5 +1,5 @@
 = simple_form_for Message.new, url: { action: "create", controller: "messages" } do |f|
- = f.input :name, as: :string
- = f.input :phone_number, as: :integer
- = f.input :images, as: :string
+ = f.input :name, as: :string, label: "Your name", placeholder: "Rick Sanchez"
+ = f.input :phone_number, as: :integer, label: "Recipient phone number", placeholder: "3101234567"
+ = f.input :images, as: :string, placeholder: "Image to search & send.... i.e. Penguins, Shirtless Dudes", label: "Image term"
  = f.button :submit, 'Send Blitz!', class: 'light-blue'
