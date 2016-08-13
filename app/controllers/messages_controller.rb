@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
 	def create
-		@message = Message.new(message_params)
+		@message = build_message
 
 		respond_to do |format|
       if @message.save
@@ -16,7 +16,25 @@ class MessagesController < ApplicationController
 	private
 
 	def message_params
-		params.require(:message).permit(:name, :phone_number, :images)
+		params.require(:message).permit(:name, :phone_number, :images, :bundle)
+	end
+
+	def search_size
+		if params[:bundle] == "10 Images: $0.99"
+			search_size = 10
+		elsif params[:bundle] == "20 images: $1.99"
+			search_size = 20
+		else
+			search_size = 30
+		end
+	end
+
+	def build_message
+		#Twilio Implementation
+	end
+
+	def image_urls
+		BingInterface.return_image_urls(params[:images], search_size)
 	end
 
 end
