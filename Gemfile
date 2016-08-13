@@ -18,10 +18,12 @@ gem 'twilio-ruby', '~> 4.11.1'
 gem 'phonelib'
 gem "figaro"
 gem "bing-search"
+gem 'twilio-ruby', '~> 4.11.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri
 	gem 'rspec-rails', '~> 3.1'
+	gem 'pry-rails'
 end
 
 group :test do

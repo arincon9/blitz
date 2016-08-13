@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 		@message = build_message
 
 		respond_to do |format|
-      if @message.save
+      if @message.present?
         format.html { redirect_to root_path, notice: "Message Blitz has been sent" }
         format.js
       else
@@ -13,16 +13,16 @@ class MessagesController < ApplicationController
 		end
 	end
 
-	private
+	protected
 
 	def message_params
 		params.require(:message).permit(:name, :phone_number, :images, :bundle)
 	end
 
 	def search_size
-		if params[:bundle] == "10 Images: $0.99"
+		if params[:message][:bundle] == "10 Images: $0.99"
 			search_size = 10
-		elsif params[:bundle] == "20 images: $1.99"
+		elsif params[:message][:bundle] == "20 images: $1.99"
 			search_size = 20
 		else
 			search_size = 30
@@ -30,11 +30,21 @@ class MessagesController < ApplicationController
 	end
 
 	def build_message
-		#Twilio Implementation
+		image_urls.each do |media_url|
+			TwilioInterface.send_message(formatted_phone_number, body, media_url)
+		end
+	end
+
+	def formatted_phone_number
+		"+1#{params[:message][:phone_number]}"
+	end
+
+	def body
+		"You have been message blitzed by: #{params[:message][:name]}. Get them back at messageblitz.herokuapp.com"
 	end
 
 	def image_urls
-		BingInterface.return_image_urls(params[:images], search_size)
+		BingInterface.return_image_urls(params[:message][:images], search_size)
 	end
 
 end
