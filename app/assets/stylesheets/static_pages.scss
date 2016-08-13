@@ -282,7 +282,7 @@ Main components
     display: block;
     position: absolute;
     left: 0;
-    background-image: url(../img/cd-app-image.png);
+    background-image: image-url("cd-app-image.png");
     /* Firefox bug - 3D CSS transform, jagged edges */
     outline: 1px solid transparent;
   }
