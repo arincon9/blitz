@@ -14,7 +14,6 @@ gem 'materialize-sass'
 gem 'jquery-turbolinks'
 gem "haml-rails", "~> 0.9"
 gem 'simple_form'
-gem 'twilio-ruby', '~> 4.11.1'
 gem 'phonelib'
 gem "figaro"
 gem "bing-search"
