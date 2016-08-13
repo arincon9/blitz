@@ -1,10 +1,8 @@
-require 'bing_search'
-
 class BingInterface
 	def self.return_image_urls(keyword, size)
 		client = BingSearch::Client.new(account_key: ENV["BING_SEARCH_ACCOUNT_KEY"])
 
-		image_results = BingSearch.image(keyword, limit: size)
+		image_results = client.image(keyword, limit: size)
 		image_urls = []
 
 		image_results.each do |image|

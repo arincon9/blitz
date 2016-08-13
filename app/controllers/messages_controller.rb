@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+	require 'bing_search'
+
 	def create
 		@message = build_message
 
@@ -44,7 +46,7 @@ class MessagesController < ApplicationController
 	end
 
 	def image_urls
-		image_urls = ::BingInterface.return_image_urls(params[:message][:images], search_size)
+		::BingInterface.return_image_urls(params[:message][:images], search_size)
 	end
 
 end
