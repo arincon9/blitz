@@ -15,8 +15,9 @@ gem 'jquery-turbolinks'
 gem "haml-rails", "~> 0.9"
 gem 'simple_form'
 gem 'twilio-ruby', '~> 4.11.1'
-gem 'searchbing'
 gem 'phonelib'
+gem "figaro"
+gem "bing-search"
 
 group :development, :test do
   gem 'byebug', platform: :mri
