@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
-
+  include ::BingInterface
+	
 	def create
 		@message = build_message
 
