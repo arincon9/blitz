@@ -1,3 +1,5 @@
+require 'bing-search'
+
 class BingInterface
 	def self.return_image_urls(keyword, size)
 		client = BingSearch::Client.new(account_key: ENV["BING_SEARCH_ACCOUNT_KEY"])

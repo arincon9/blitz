@@ -1,5 +1,4 @@
 class MessagesController < ApplicationController
-	require 'bing-search'
 
 	def create
 		@message = build_message
