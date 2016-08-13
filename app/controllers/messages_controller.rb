@@ -31,7 +31,7 @@ class MessagesController < ApplicationController
 
 	def build_message
 		image_urls.each do |media_url|
-			TwilioInterface.send_message(formatted_phone_number, body, media_url)
+			::TwilioInterface.send_message(formatted_phone_number, body, media_url)
 		end
 	end
 
@@ -44,7 +44,7 @@ class MessagesController < ApplicationController
 	end
 
 	def image_urls
-		image_urls = BingInterface.return_image_urls(params[:message][:images], search_size)
+		::BingInterface.return_image_urls(params[:message][:images], search_size)
 	end
 
 end
