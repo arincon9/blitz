@@ -40,7 +40,7 @@ class MessagesController < ApplicationController
 	end
 
 	def body
-		"You have been message blitzed by: #{params[:message][:name]}. Get them back at messageblitz.herokuapp.com"
+		"You have been message blitzed by: #{params[:message][:name]}. Get them back at messageblitz.com"
 	end
 
 	def image_urls
