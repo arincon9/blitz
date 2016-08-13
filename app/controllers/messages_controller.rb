@@ -24,7 +24,7 @@ class MessagesController < ApplicationController
 
 	def search_size
 		if params[:message][:bundle] == "10 Images: $0.99"
-			search_size = 10
+			search_size = 5
 		elsif params[:message][:bundle] == "20 images: $1.99"
 			search_size = 20
 		else
@@ -33,9 +33,19 @@ class MessagesController < ApplicationController
 	end
 
 	def build_message
+		send_image_blitz
+
+		send_text_message
+	end
+
+	def send_image_blitz
 		image_urls.each do |media_url|
-			::TwilioInterface.send_message(formatted_phone_number, body, media_url)
+			::TwilioInterface.send_message(formatted_phone_number, body = nil, media_url)
 		end
+	end
+
+	def send_text_message
+		::TwilioInterface.send_message(formatted_phone_number, body, media_url = nil)
 	end
 
 	def formatted_phone_number
