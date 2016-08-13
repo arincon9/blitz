@@ -44,7 +44,7 @@ class MessagesController < ApplicationController
 	end
 
 	def image_urls
-		BingInterface.return_image_urls(params[:message][:images], search_size)
+		image_urls = BingInterface.return_image_urls(params[:message][:images], search_size)
 	end
 
 end
