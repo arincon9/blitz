@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
-	require 'bing_interface'
-	require 'twilio_interface'
-		
+	require_dependency 'bing_interface'
+	require_dependency 'twilio_interface'
+
 	def create
 		@message = build_message
 
