@@ -1,4 +1,6 @@
-class MessagesController < ApplicationController	
+class MessagesController < ApplicationController
+	require 'bing_interface'
+		
 	def create
 		@message = build_message
 
