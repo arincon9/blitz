@@ -1,1 +1,1 @@
-BingSearch.account_key = ENV["bing_api_key"]
+BingSearch.account_key = ENV["BING_SEARCH_ACCOUNT_KEY"]
