@@ -1,0 +1,2 @@
+class AddColumnPromoodeToMessage < ApplicationRecord
+end

@@ -5,6 +5,7 @@
   = f.input :images, as: :string, placeholder: "Image to search & send.... i.e. Penguins, Shirtless Dudes", label: "Image term"
   .input-field
    = f.input :bundle, collection: [ "10 Images: $0.99", "20 images: $1.99", "30 Images: $2.99" ]
+  = f.input :promo_code, as: :string, placeholder: "Add your promo code here"
  .modal-footer
   = f.button :submit, 'Send Blitz!', class: 'light-blue'
  %br
