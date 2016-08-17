@@ -1,2 +1,0 @@
-class AddColumnBundleToMessage < ApplicationRecord
-end

@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
 	protected
 
 	def message_params
-		params.require(:message).permit(:name, :phone_number, :images, :bundle)
+		params.require(:message).permit(:name, :phone_number, :images, :bundle, :promo_code)
 	end
 
 	def search_size
@@ -40,12 +40,12 @@ class MessagesController < ApplicationController
 
 	def send_image_blitz
 		image_urls.each do |media_url|
-			::TwilioInterface.send_message(formatted_phone_number, body = nil, media_url)
+			#::TwilioInterface.send_message(formatted_phone_number, body = nil, media_url)
 		end
 	end
 
 	def send_text_message
-		::TwilioInterface.send_message(formatted_phone_number, body, media_url = nil)
+		#::TwilioInterface.send_message(formatted_phone_number, body, media_url = nil)
 	end
 
 	def formatted_phone_number
@@ -57,7 +57,7 @@ class MessagesController < ApplicationController
 	end
 
 	def image_urls
-		::BingInterface.return_image_urls(params[:message][:images], search_size)
+		#::BingInterface.return_image_urls(params[:message][:images], search_size)
 	end
 
 end
