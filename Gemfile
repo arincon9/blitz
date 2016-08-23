@@ -18,6 +18,7 @@ gem 'phonelib'
 gem "figaro"
 gem "bing-search"
 gem 'twilio-ruby', '~> 4.11.1'
+gem 'braintree', '~> 2.33.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri
