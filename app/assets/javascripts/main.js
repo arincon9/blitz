@@ -46,3 +46,12 @@ jQuery(document).ready(function($){
 $(document).ready(function() {
 	$('select').material_select();
 });
+
+braintree.setup('CLIENT-TOKEN-FROM-SERVER', 'dropin', {
+  container: 'dropin-container',
+  paypal: {
+    singleUse: true,
+    amount: 10.00,
+    currency: 'USD'
+  }
+});
