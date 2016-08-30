@@ -2,7 +2,7 @@
  .modal-content
   = f.input :name, as: :string, label: "Your name", placeholder: "Rick Sanchez"
   = f.input:phone_number, as: :tel, label: "Recipient phone number", placeholder: "3101234567"
-  = f.input :images, as: :string, placeholder: "Image to search & send.... i.e. Penguins, Shirtless Dudes", label: "Image term"
+  = f.input :images, as: :string, placeholder: "Image to search & send.... i.e. Penguins, Pugs, etc.", label: "Image term"
   .input-field
    = f.input :bundle, collection: [ "10 Images: $0.99", "20 images: $1.99", "30 Images: $2.99" ]
   = f.input :promo_code, as: :string, placeholder: "Add your promo code here"

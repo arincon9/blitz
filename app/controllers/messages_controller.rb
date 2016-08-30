@@ -16,7 +16,7 @@ class MessagesController < ApplicationController
 		end
 	end
 
-	protected
+	private
 
 	def message_params
 		params.require(:message).permit(:name, :phone_number, :images, :bundle, :promo_code)
