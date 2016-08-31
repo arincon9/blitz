@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
 	require_dependency 'bing_interface'
 	require_dependency 'twilio_interface'
+ require_dependency 'braintree_interface'
 
 	def create
 		@message = build_message
@@ -39,8 +40,10 @@ class MessagesController < ApplicationController
 	end
 
 	def send_image_blitz
-		image_urls.each do |media_url|
-			::TwilioInterface.send_message(formatted_phone_number, body = nil, media_url)
+		if payments?
+			image_urls.each do |media_url|
+				::TwilioInterface.send_message(formatted_phone_number, body = nil, media_url)
+			end
 		end
 	end
 
@@ -58,6 +61,20 @@ class MessagesController < ApplicationController
 
 	def image_urls
 		::BingInterface.return_image_urls(params[:message][:images], search_size)
+	end
+
+	def payment?
+		::BraintreeInterface.make_payment(amount)
+	end
+
+	def amount
+		if params[:message][:bundle] == "10 Images: $0.99"
+			amount = 0.99
+		elsif params[:message][:bundle] == "20 images: $1.99"
+			amount = 1.99
+		else
+			amount = 2.99
+		end
 	end
 
 end

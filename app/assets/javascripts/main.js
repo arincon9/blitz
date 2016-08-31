@@ -48,10 +48,5 @@ $(document).ready(function() {
 });
 
 braintree.setup('CLIENT-TOKEN-FROM-SERVER', 'dropin', {
-  container: 'dropin-container',
-  paypal: {
-    singleUse: true,
-    amount: 10.00,
-    currency: 'USD'
-  }
+container: 'dropin-container'
 });
