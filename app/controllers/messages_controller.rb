@@ -40,10 +40,8 @@ class MessagesController < ApplicationController
 	end
 
 	def send_image_blitz
-		if payments?
 			image_urls.each do |media_url|
 				::TwilioInterface.send_message(formatted_phone_number, body = nil, media_url)
-			end
 		end
 	end
 
